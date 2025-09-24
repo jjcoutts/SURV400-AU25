@@ -1,0 +1,137 @@
+---
+title: "SURV400: Assignment 3"
+format: html
+editor: visual
+---
+
+Please complete this assignment to the best of your ability. When you are done, render the document and upload the .docx file to the submission portal on ELMS.
+
+## Data Types
+
+In this section, we're going to practice working with and creating data of different data types.
+
+### Numeric/Integer Data
+
+```{r}
+# create a vector of integers with the numbers 0 to 100
+
+# create a vector of the number 1 repeated 1000 times. Check the length of this to verify it is correct. 
+
+
+# calculate the mean of the following vector
+c(1:10, rep(1,10), seq(1, 5, .4), 31:45)
+
+```
+
+What would be the class of the following vector: c(1L, 2L, 3.5L)
+
+### Character Data
+
+```{r}
+# create a vector with 3 letters and 1 sentence, each as individual elements. What is the length of this vector? 
+
+# Create a vector called cat with the word cat in it and a vector called dog with the word dog in it. Compare cat > dog. What happens and why? 
+```
+
+### Boolean Data
+
+```{r}
+# create a condition that evaluates as TRUE
+
+# create a condtiion that evaluates as FALSE
+
+# create a condition with an OR statement that evaluates to TRUE.
+
+# create a condition with an AND statement that evaluates to FALSE.
+
+```
+
+### Factor Data
+
+```{r}
+sizes <- c("small","medium", "large")
+# turn the above vector into a factor with ordered levels. 
+
+countries = c("US","Sweden","China","Egypt")
+# turn the above vector into a factor with unordered levels 
+
+```
+
+### General
+
+```{r}
+# check the class of the below vector
+messy <- c(1L, TRUE, "0", 125)
+
+```
+
+## Data Structures
+
+### Vectors
+
+```{r}
+# create a vector with the INTEGERS 1 through 100 
+
+# divide this vector by 2 and check the resulting data type
+
+```
+
+### Matrices
+
+```{r}
+# create a 2x3 matrix with the numbers 1 through 6 in it going from left to right (1, 2, 3 in row 1, 4, 5, and 6 in row 2)
+
+# multiply all elements in the matrix by 2 in a single operation
+
+```
+
+### Data Frames
+
+```{r}
+# create a data frame with three columnns named numbers, numbers_squared, and numbers_doubled. The first column should be the numbers 1 through 10, the second and third columns should be those numbers squared and doubled, respectively. 
+
+
+# create a fourth column in your data frame called ratio and make it the first column divided by the second column. 
+
+```
+
+## Loops
+
+```{r}
+# loop through the COLUMNS of the data frame above and computer the standard deviations of each column
+
+# create a for loop that prints the expression "HELLO WORLD!" the number of rows of the data frame above. 
+
+# create an empty results vector the number of rows of the data frame above and fill it with the numbers of the first column doubled. Compare it to the third column in your data frame.
+
+```
+
+## Working with Data
+
+It is critical for us to be able to read in and manipulate data. Please follow the comments in the following code chunk to show your data wrangling skills.
+
+```{r}
+# read in the dataset "airquality" from R using the data() command. 
+
+# describe this dataset with a single line of code. 
+
+# plot two numeric variables of your choice to show you can do it
+
+# read in the trauma.csv dataset on Jupyter
+
+```
+
+## Debugging
+
+Below are lines of code, each with one error. Please fix them so this document renders!
+
+```{r}
+numbers == c(1:100)
+halved = Numbers/2
+char = c("a","b",c,"D")
+Print(char)
+df = is.data.frame(numbers = 1:3, letters = c("A","B","C"))
+ncol(df) = length(df) # this should be true
+```
+
+That's it! Please render and upload this document to ELMS.
