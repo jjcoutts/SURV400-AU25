@@ -1,0 +1,152 @@
+---
+title: "EMPTY_Correlational_Data_Analysis"
+author: "SURV400"
+format: docx
+editor: visual
+---
+
+## The Paper
+
+Nisbet, E., Ortiz, M., Miller, Y., & Smith, A. (2011). The “bin Laden”
+effect: How American public opinion about Muslim Americans shifted in
+the wake of Osama bin Laden’s death. *School of Communication, Ohio
+State University.*
+
+In the late 2000s, a researcher at Ohio State was conducting research on
+perceptions of Muslims in the US. On 1 May 2011 at 11:30 PM, then
+President Obama announced the death of Osama bin Laden. Recognizing the
+unique timestamp this represented, the researchers decided to continue
+the study, somewhat artificially with two groups: perceptions before and
+after bin Laden's death. Participants were measured on a battery of
+constructs including stereotype endorsement against Muslims and support
+of restrictions of Muslim civil liberties.
+
+For all variables, higher scores indicated higher levels of the
+construct. These data are not the original ones collected in the
+study—they were simulated to produce similar results. The analyses we do
+will not necessarily emulate the ones in the paper.
+
+Understanding potential reasons why one may endorse limiting Muslim's
+civil liberties is critical in the effort to eliminate Islamophobia (and
+understanding/eliminating hate toward other groups).
+
+## The Variables
+
+**BINLADEN:** Whether they participated *before* bin Laden was announced
+dead (0) or after (1).
+
+**STEREO:** A self-report measure of the endorsement of stereotypes.
+(e.g., How much do you associate Tolerance vs. Fanaticism with Muslim
+Americans?) Four items scaled 1-5. Total: Average.
+
+**MCIVIL:** A self-report measure of one's support for the restriction
+of Muslim civil liberties (e.g., Please rate your agreement with the
+statement "All Muslims in the US should carry an ID card."). Five items
+scaled 1-5. Total: Average.
+
+**AGE:** The participant's age (standardized).
+
+**IDEO:** Political ideology (higher = conservative).
+
+**SEX:** 0 = female, 1 = male
+
+For all constructs, higher values = greater levels of construct.
+
+## The Analysis
+
+We are going to fit a model to the data with their participation group
+(before/after bin Laden's death; BINLADEN) as the predictor and their
+endorsement of the restriction of Muslim's civil liberties as the
+outcome (MCIVIL).
+
+### Load the Required Packages
+
+We need to read in [**ggplot2**]{.underline} and
+[**jtools**]{.underline}.
+
+```{r}
+
+```
+
+### Read in the Data
+
+If you're working on Jupyter, this is in the same folder as the file so
+you won't need the file path.
+
+```{r}
+
+```
+
+### Generate Descriptive Statistics
+
+Use the summary command.
+
+```{r}
+
+```
+
+### Visualize the Data
+
+What visualization would be appropriate for a dichotomous predictor and
+continuous outcome?
+
+**Answer:**
+
+```{r}
+ggplot(data = bl, aes(x = as.factor(binladen), y = mcivil)) +
+  geom_boxplot() + 
+  labs(x = "Condition (0 = Before Death, 1 = After Death", y = "Restriction of Civil Liberties") + 
+  jtools::theme_apa()
+```
+
+How do the assumptions look?
+
+-   Linearity:
+
+-   Homogeneity of variance:
+
+-   Normality of residuals: If you want, you can check this in the
+    "Model" section using the command hist(resid(model_name))
+
+### Fit the Model to the Data
+
+What correlation coefficient should you run? (Note: The command in R is
+the same.)
+
+**Answer:**
+
+```{r}
+# run the analysis between the binladen and mcivil variables
+cor.test()
+```
+
+What are the results?
+
+**Answer:**
+
+### Exploratory Data Analysis
+
+Run the code below if you want to explore the relationship between other
+variables in the dataset. You can also test out other relationships
+you're interested in! (Or just ignore; the code below will render just
+fine.)
+
+```{r}
+# exploratory data analysis
+ggplot(data = bl, aes(x = as.factor(binladen), y = stereo)) +
+  geom_boxplot() + 
+  labs(x = "Condition (0 = Before Death, 1 = After Death", y = "Stereotype Endorsement") + 
+  jtools::theme_apa()
+cor.test(bl$binladen, bl$stereo)
+
+ggplot(data = bl, aes(x = mcivil, y = stereo)) +
+  geom_point() + 
+  geom_jitter() + 
+  labs(x = "Restriction of Civil Liberties", y = "Stereotype Endorsement") +
+  jtools::theme_apa()
+
+# run the correlation between the mcivil and stereo variables
+cor.test(bl$mcivil, bl$stereo)
+```
+
+## End of script
