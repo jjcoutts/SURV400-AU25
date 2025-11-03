@@ -1,0 +1,67 @@
+---
+title: "SURV400: Assignment 10"
+format: html
+editor: visual
+---
+
+Please complete this assignment to the best of your ability. When you are done, render the document and upload the .docx or .html file to the submission portal on ELMS.
+
+## Description of Data
+
+The data are the same ones we used in Assignment 3 involving young boys' trauma on the Gaza strip in the mid 2000s. The following variables are in the data set:
+
+-   **Age:** The age of the boy in years.
+
+-   **PTSD:** Cumulative score of post traumatic stress disorder symptomatology. Higher scores = more PTSD symptoms.
+
+-   **Lonely:** Cumulative score of self-reported loneliness. Higher scores = more loneliness.
+
+-   **Trauma:** Count of experienced traumatic events (e.g., shelling of home, loss of parents). Higher scores = more traumatic events.
+
+-   **Depress:** Cumulative score of depressive symptomatology. Higher scores = more symptoms.
+
+## Read in and Describe the Data
+
+Read the data into a data frame called "g_trauma" and describe the data set using the summary() command.
+
+```{r}
+
+```
+
+Produce a correlation table for all variables in the data set. What can we generally tell about the data? Describe the relationships between at least 3 pairs of variables. (Significance tests not required, just interpret the correlation values for now.)
+
+```{r}
+
+```
+
+**Answer:**
+
+## Visualize the Relationship
+
+Plot the relationship between traumatic events and PTSD symptoms. What can we say about homoskedasticity and linearity as assumptions?
+
+```{r}
+
+```
+
+**Answer:**
+
+## Model the Data
+
+Now we're going to look at some testing. Let's determine whether traumatic events are correlated with PTSD using cor.test().
+
+```{r}
+
+```
+
+What is the value of the test statistic, correlation coefficient (for trauma) and *p*-value? Make a decision about the null. Is this relationship significant? Assume the alpha level was .05. What would this change if the alpha was .01 instead?
+
+**Answer:**
+
+## Thinking About Third Variables
+
+In this dataset, are there variables that may be covariates or confounders that we would like to control for? List the three other variables and if/why we'd want to control fo them.
+
+**Answer:**
+
+That's it! Please render and upload this document to ELMS.
